@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+	background-color: #e9f3fd;
+	font-family: "Quicksand", sans-serif;
+  	font-optical-sizing: auto;
+	color: #273973;
+	font-weight: 700;
+	
+}
+
+h1 {text-align: center;}
+
+#main_con {
+	background-color: #fff;
+	width: 100%;
+	max-width: 600px;
+	text-align: center;
+	padding: 40px 40px 20px 40px;
+	border-radius: 20px;
+	margin: 0 auto;
+	
+}
+
+#main_con h2 {
+	font-size: 36px;
+	font-weight: bold;
+}
+
+#result_description {
+	font-size: 24px !important;
+	font-weight: normal !important;
+	/* font-style: italic; */
+}
+
+.mid_box_con {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.mid_box_con img {width: 100%; max-width: 200px;}
+
+.mid_box_con span {margin-top: 15px;}
+
+.mid_box1 #human, .mid_box2  #computer {text-transform: uppercase;}
+
+.mid_box_con .vs {font-size: 30px;}
+
+.btm_box_con {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}
+
+
+.btm_box1 {
+	background-color: #76bafe;
+	width: 265px;
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 20px 0px 0px 20px;
+	
+}
+
+.btm_box2 {
+	background-color: #61aaf8;
+	width: 265px;
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 0px 20px 20px 0px;
+}
+
+
+.score_label {font-size: 26px;}
+
+.score_num {font-size: 35px}
+
+.d_block {display: block;}
+
+#choices {display: flex; justify-content: center; margin: 0 auto; width: 100%; max-width: 300px; margin-top: 25px; }
+
+#choices button {width: 100%; max-width: 70px; text-align: center; display: flex; flex-direction: column; text-align: center; justify-content: center; align-items: center;}
+
+#choices button img {width: 100%; max-width: 150px; margin: 0 auto;}
+
+
+/* Play Again? button */
+#play {
+	display: block;
+    background-color: #4C7AF0;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	margin: 2rem auto 0;
+}
+
+#play:hover {
+    background-color: #3a65c7 ;
+    transform: translateY(-1px);
+
+}
+
+#play:active {
+    background-color: #2f53a3;
+    transform: translateY(0);
+}
+
+/* Optional: center it nicely below your score */
+#play {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+
+.d_none {display: none !important;}
+.text_center {text-align: center;}
+#instruction {color:#2F3E73;}
+
+.win {
+    color: #2D974B; /* Friendly green */
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.lose {
+    color: #E94B4B; /* Soft red */
+    font-weight: 700;
+    font-size: 1.3rem;
+}

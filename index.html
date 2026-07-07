@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./style.css" rel="stylesheet">
+	<title>Rock, Paper, Scissors</title>
+</head>
+<body>
+
+	<main>
+		<h1>Rock Paper Scissors!</h1>
+
+		<div id="main_con">
+			<h2 id="round_label">Round 1</h2>
+
+			<div class="mid_box_con">
+				<div class="mid_box1">
+					<img src="./images/human-question-mark.png">
+					<span class="d_block">Human: <span id="human">?</span></span>
+				</div>
+
+				<span class="d_block vs">vs</span>
+				
+				<div class="mid_box2">
+					<img src="./images/computer-question-mark.png">
+					<span class="d_block">Computer: <span id="computer">?</span></span>
+				</div>
+			</div> <!-- .mid_box_con -->
+ 
+			<h2 id="result_description">Play the game!</h2>
+
+			<div class="btm_box_con">
+				<div class="btm_box1"><span class="d_block score_label">Human: </span><span id="human_score" class="d_block score_num">0</span></div>
+				<div class="btm_box2"><span class="d_block score_label">Computer: </span><span id="computer_score" class="d_block score_num">0</span></div>
+			</div>
+
+		</div>
+
+		<div id="choices">
+			<button id="rock"><img src="./images/human-rock.png"><span>rock</span></button>
+			<button id="paper"><img src="./images/human-paper.png"><span>paper</span></button>
+			<button id="scissors"><img src="./images/human-scissors.png"><span>scissors</span></button>
+		</div>
+
+		<button id="play" class="d_none">Play Again?</button>
+		<p id="instruction" class="text_center red">Ready to play? Pick your weapon!</p>
+
+	</main>
+
+	<script src="./script.js"></script>
+</body>
+</html>
