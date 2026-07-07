@@ -1,17 +1,17 @@
-// Computer
-let computerChoice = getComputerChoice();
+let computerChoice = undefined;
 let humanChoice = undefined;
 
-
-// getHumanChoice
+// get computer and human choice
 const choicesContainer = document.querySelector('#choices');
 choicesContainer.addEventListener('click', event => {
 	let clickedButton = event.target.closest('button');
 	if (!clickedButton) { return; }
 
-	humanChoice = clickedButton.id;	
+	// get human choice
+	humanChoice = clickedButton.id;
 
-	console.log(humanChoice);
+	// get computer choice
+	computerChoice = getComputerChoice();
 });
 
 
