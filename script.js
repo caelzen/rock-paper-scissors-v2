@@ -5,6 +5,11 @@ let computerScore = 0;
 let humanWin = false;
 let computerWin = false;
 
+// UI
+const humanChoiceDisplay = document.querySelector('#human');
+const computerChoiceDisplay = document.querySelector('#computer');
+const resultTextDisplay = document.querySelector('#result_description');
+
 
 
 // get computer and human choice
@@ -19,7 +24,6 @@ choicesContainer.addEventListener('click', event => {
 	// get computer choice
 	computerChoice = getComputerChoice();
 
-
 	playRound(humanChoice, computerChoice);
 	
 });
@@ -31,9 +35,7 @@ function playRound(humanChoice, computerChoice) {
 	updateScoresUI(humanScore, computerScore);
 	updateImagesUI(humanChoice, computerChoice);
 	updateWinnerTextUI(humanWin, computerWin);
-
-
-
+	removePopEffect(resultTextDisplay)
 }
 
 
@@ -95,9 +97,6 @@ function randomizer() {
 
 // UI updates
 function updateChoicesUI(humanChoice, computerChoice) {
-	const humanChoiceDisplay = document.querySelector('#human');
-	const computerChoiceDisplay = document.querySelector('#computer');
-
 	humanChoiceDisplay.textContent = humanChoice;
 	computerChoiceDisplay.textContent = computerChoice;
 }
@@ -122,27 +121,24 @@ function updateImagesUI(humanChoice, computerChoice) {
 
 
 function updateWinnerTextUI(humanWin, computerWin) {
-	const resultTextDisplay = document.querySelector('#result_description');
+	
 
 	resultTextDisplay.classList.remove('pop-win', 'pop-lose', 'pop-tie');
 
 	if(humanWin === false && computerWin === false) {
 		resultTextDisplay.textContent = '🤝 Tie!';
 		resultTextDisplay.classList.add('pop-tie', 'pop-effect');
-		removePopEffect(resultTextDisplay);
 		return;
 	}
 
 	if(humanWin) {
 		resultTextDisplay.textContent = '🔥 Point to You!';
 		resultTextDisplay.classList.add('pop-win', 'pop-effect');
-		removePopEffect(resultTextDisplay);
 	} 
 
 	if(computerWin) {
 		resultTextDisplay.textContent = '🤖 Computer scores!';
 		resultTextDisplay.classList.add('pop-lose', 'pop-effect');
-		removePopEffect(resultTextDisplay);
 	}
 
 }
