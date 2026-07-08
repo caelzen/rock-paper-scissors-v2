@@ -3,6 +3,12 @@ let computerChoice = undefined;
 let humanScore = 0;
 let computerScore = 0;
 
+
+// Updates the UI text elements for both player choices
+const humanChoiceDisplay = document.querySelector('#human');
+const computerChoiceDisplay = document.querySelector('#computer');
+
+
 // get computer and human choice
 const choicesContainer = document.querySelector('#choices');
 choicesContainer.addEventListener('click', event => {
@@ -17,6 +23,7 @@ choicesContainer.addEventListener('click', event => {
 
 
 	playRound(humanChoice, computerChoice);
+	updateHumanChoiceTextUI(humanChoice, computerChoice)
 });
 
 
@@ -26,6 +33,7 @@ function playRound(humanChoice, computerChoice) {
 
 
 function checkRoundWinner(humanChoice, computerChoice) {
+
 	if (humanChoice === computerChoice) { return; }
 
 	if (humanChoice === 'rock') {
@@ -54,4 +62,11 @@ function getComputerChoice() {
 
 function randomizer() {
 	return Math.floor(Math.random() * 3) + 1;
+}
+
+
+// UI
+function updateHumanChoiceTextUI(humanChoice, computerChoice) {
+	humanChoiceDisplay.textContent = humanChoice;
+	computerChoiceDisplay.textContent = computerChoice;
 }
