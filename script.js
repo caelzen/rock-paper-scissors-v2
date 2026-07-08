@@ -2,6 +2,8 @@ let humanChoice = undefined;
 let computerChoice = undefined;
 let humanScore = 0;
 let computerScore = 0;
+let humanWin = false;
+let computerWin = false;
 
 
 
@@ -25,27 +27,50 @@ choicesContainer.addEventListener('click', event => {
 
 function playRound(humanChoice, computerChoice) {
 	checkRoundWinner(humanChoice, computerChoice);
-
 	updateChoicesUI(humanChoice, computerChoice)
 	updateScoresUI(humanScore, computerScore);
 	updateImagesUI(humanChoice, computerChoice);
+	updateWinnerTextUI(humanWin, computerWin);
 }
 
 
 function checkRoundWinner(humanChoice, computerChoice) {
+	humanWin = false;
+	computerWin = false;
 
-	if (humanChoice === computerChoice) { return; }
-
+	if (humanChoice === computerChoice) { 
+		humanWin = false; computerWin = false; 
+		return; 
+	}
+	
 	if (humanChoice === 'rock') {
-		computerChoice === 'paper' ? computerScore++ : humanScore++;
+		if(computerChoice === 'paper') {
+			computerScore++;
+			computerWin = true;
+		} else {
+			humanScore++;
+			humanWin = true;
+		}
 	}
 
 	if (humanChoice === 'paper') {
-		computerChoice === 'scissors' ? computerScore++ : humanScore++;
+		if(computerChoice === 'scissors') {
+			computerScore++;
+			computerWin = true;
+		} else {
+			humanScore++;
+			humanWin = true;
+		}
 	}
 
 	if (humanChoice === 'scissors') {
-		computerChoice === 'rock' ? computerScore++ : humanScore++;
+		if(computerChoice === 'rock') {
+			computerScore++;
+			computerWin = true;
+		} else {
+			humanScore++;
+			humanWin = true;
+		}
 	}
 }
 
@@ -91,3 +116,21 @@ function updateImagesUI(humanChoice, computerChoice) {
 	humanImageDisplay.setAttribute('src', `./images/human-${humanChoice}.png`);
 	computerImageDisplay.setAttribute('src', `./images/computer-${computerChoice}.png`);
 }
+
+
+function updateWinnerTextUI(humanWin, computerWin) {
+	if(humanWin === false && computerWin === false) {
+		console.log("TIE");
+		return;
+	}
+
+	if(humanWin) {
+		console.log("HUMAN WINS");
+	} 
+
+	if(computerWin) {
+		console.log("Computer Wins");
+	}
+}
+
+
