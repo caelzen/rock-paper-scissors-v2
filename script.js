@@ -1,5 +1,7 @@
-let computerChoice = undefined;
 let humanChoice = undefined;
+let computerChoice = undefined;
+let humanScore = 0;
+let computerScore = 0;
 
 // get computer and human choice
 const choicesContainer = document.querySelector('#choices');
@@ -12,7 +14,33 @@ choicesContainer.addEventListener('click', event => {
 
 	// get computer choice
 	computerChoice = getComputerChoice();
+
+
+	playRound(humanChoice, computerChoice);
 });
+
+
+function playRound(humanChoice, computerChoice) {
+	checkRoundWinner(humanChoice, computerChoice);
+}
+
+
+function checkRoundWinner(humanChoice, computerChoice) {
+	if (humanChoice === computerChoice) { return; }
+
+	if (humanChoice === 'rock') {
+		computerChoice === 'paper' ? computerScore++ : humanScore++;
+	}
+
+	if (humanChoice === 'paper') {
+		computerChoice === 'scissors' ? computerScore++ : humanScore++;
+	}
+
+	if (humanChoice === 'scissors') {
+		computerChoice === 'rock' ? computerScore++ : humanScore++;
+	}
+}
+
 
 
 function getComputerChoice() {
