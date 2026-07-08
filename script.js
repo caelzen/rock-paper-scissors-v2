@@ -4,10 +4,6 @@ let humanScore = 0;
 let computerScore = 0;
 
 
-// Updates the UI text elements for both player choices
-const humanChoiceDisplay = document.querySelector('#human');
-const computerChoiceDisplay = document.querySelector('#computer');
-
 
 // get computer and human choice
 const choicesContainer = document.querySelector('#choices');
@@ -23,7 +19,8 @@ choicesContainer.addEventListener('click', event => {
 
 
 	playRound(humanChoice, computerChoice);
-	updateHumanChoiceTextUI(humanChoice, computerChoice)
+	updateChoicesUI(humanChoice, computerChoice)
+	updateScoresUI(humanScore, computerScore);
 });
 
 
@@ -65,8 +62,19 @@ function randomizer() {
 }
 
 
-// UI
-function updateHumanChoiceTextUI(humanChoice, computerChoice) {
+// UI updates
+function updateChoicesUI(humanChoice, computerChoice) {
+	const humanChoiceDisplay = document.querySelector('#human');
+	const computerChoiceDisplay = document.querySelector('#computer');
+
 	humanChoiceDisplay.textContent = humanChoice;
 	computerChoiceDisplay.textContent = computerChoice;
+}
+
+function updateScoresUI(humanScore, computerScore) {
+	const humanScoreDisplay = document.querySelector('#human_score');
+	const computerScoreDisplay = document.querySelector('#computer_score');
+
+	humanScoreDisplay.textContent = humanScore
+	computerScoreDisplay.textContent = computerScore;
 }
