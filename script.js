@@ -35,7 +35,7 @@ function playRound(humanChoice, computerChoice) {
 	updateScoresUI(humanScore, computerScore);
 	updateImagesUI(humanChoice, computerChoice);
 	updateWinnerTextUI(humanWin, computerWin);
-	removePopEffect(resultTextDisplay)
+	removePopEffect();
 }
 
 
@@ -144,7 +144,7 @@ function updateWinnerTextUI(humanWin, computerWin) {
 }
 
 
-function removePopEffect(resultTextDisplay) {
+function removePopEffect() {
 	setTimeout(() => {
 		resultTextDisplay.classList.remove('pop-effect');
 	}, 300);
