@@ -19,13 +19,16 @@ choicesContainer.addEventListener('click', event => {
 
 
 	playRound(humanChoice, computerChoice);
-	updateChoicesUI(humanChoice, computerChoice)
-	updateScoresUI(humanScore, computerScore);
+	
 });
 
 
 function playRound(humanChoice, computerChoice) {
 	checkRoundWinner(humanChoice, computerChoice);
+
+	updateChoicesUI(humanChoice, computerChoice)
+	updateScoresUI(humanScore, computerScore);
+	updateImagesUI(humanChoice, computerChoice);
 }
 
 
@@ -77,4 +80,14 @@ function updateScoresUI(humanScore, computerScore) {
 
 	humanScoreDisplay.textContent = humanScore
 	computerScoreDisplay.textContent = computerScore;
+}
+
+
+function updateImagesUI(humanChoice, computerChoice) {
+	const humanImageDisplay = document.querySelector('#human_img');
+	const computerImageDisplay = document.querySelector('#computer_img');
+
+
+	humanImageDisplay.setAttribute('src', `./images/human-${humanChoice}.png`);
+	computerImageDisplay.setAttribute('src', `./images/computer-${computerChoice}.png`);
 }
