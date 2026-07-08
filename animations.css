@@ -1,0 +1,23 @@
+#result_description {
+    font-size: 1.6rem;
+    font-weight: bold;
+    /* color: #ffffff; Your default text color */
+    transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.1s ease;
+}
+
+/* The active state when a button is clicked */
+.pop-win {
+    color: #2ecc71; /* Vibrant Green */
+}
+
+.pop-lose {
+    color: #e74c3c; /* Sharp Red */
+}
+
+.pop-tie {
+    color: #f1c40f; /* Amber Yellow */
+}
+
+.pop-effect {
+	transform: scale(1.15);
+}

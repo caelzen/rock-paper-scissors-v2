@@ -31,6 +31,9 @@ function playRound(humanChoice, computerChoice) {
 	updateScoresUI(humanScore, computerScore);
 	updateImagesUI(humanChoice, computerChoice);
 	updateWinnerTextUI(humanWin, computerWin);
+
+
+
 }
 
 
@@ -119,18 +122,34 @@ function updateImagesUI(humanChoice, computerChoice) {
 
 
 function updateWinnerTextUI(humanWin, computerWin) {
+	const resultTextDisplay = document.querySelector('#result_description');
+
+	resultTextDisplay.classList.remove('pop-win', 'pop-lose', 'pop-tie');
+
 	if(humanWin === false && computerWin === false) {
-		console.log("TIE");
+		resultTextDisplay.textContent = '🤝 Tie!';
+		resultTextDisplay.classList.add('pop-tie', 'pop-effect');
+		removePopEffect(resultTextDisplay);
 		return;
 	}
 
 	if(humanWin) {
-		console.log("HUMAN WINS");
+		resultTextDisplay.textContent = '🔥 Point to You!';
+		resultTextDisplay.classList.add('pop-win', 'pop-effect');
+		removePopEffect(resultTextDisplay);
 	} 
 
 	if(computerWin) {
-		console.log("Computer Wins");
+		resultTextDisplay.textContent = '🤖 Computer scores!';
+		resultTextDisplay.classList.add('pop-lose', 'pop-effect');
+		removePopEffect(resultTextDisplay);
 	}
+
 }
 
 
+function removePopEffect(resultTextDisplay) {
+	setTimeout(() => {
+		resultTextDisplay.classList.remove('pop-effect');
+	}, 300);
+}
