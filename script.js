@@ -8,6 +8,10 @@ let roundCounter = 0;
 let isGameOver = false;
 
 // UI
+const humanScoreDisplay = document.querySelector('#human_score');
+const computerScoreDisplay = document.querySelector('#computer_score');
+const humanImageDisplay = document.querySelector('#human_img');
+const computerImageDisplay = document.querySelector('#computer_img');
 const humanChoiceDisplay = document.querySelector('#human');
 const computerChoiceDisplay = document.querySelector('#computer');
 const roundCounterDisplay = document.querySelector('#round_number');
@@ -41,7 +45,10 @@ function playRound(humanChoice, computerChoice) {
 	updateWinnerTextUI(humanWin, computerWin);
 	removePopEffect();
 	checkTotalScore();
-	resetGame();
+
+	if (isGameOver) {
+		addPlayAgainUI();
+	}
 }
 
 
@@ -112,17 +119,36 @@ function checkTotalScore() {
 	}
 }
 
+
+function addPlayAgainUI() {
+	playAgainDisplay.classList.remove('d_none');
+	choicesDisplay.classList.add('d_none');
+}
+
+playAgainDisplay.addEventListener('click', event => {
+	resetGame();
+	playAgainDisplay.classList.add('d_none');
+	choicesDisplay.classList.remove('d_none');
+	console.log("playAgainDisplay Clicked");
+});
+
+
 function resetGame() {
-	if (isGameOver) {
-		roundCounter = 0;
-		humanScore = 0;
-		computerScore = 0;
-		humanWin = false;
-		computerWin = false;
-		isGameOver = false;
-		playAgainDisplay.classList.remove('d_none');
-		choicesDisplay.classList.add('d_none');
-	}
+	roundCounter = 0;
+	humanScore = 0;
+	computerScore = 0;
+	humanWin = false;
+	computerWin = false;
+	isGameOver = false;
+
+	// Reset UIs
+	roundCounterDisplay.textContent = roundCounter;
+	humanChoiceDisplay.textContent = '?';
+	computerChoiceDisplay.textContent = '?';
+	humanImageDisplay.setAttribute('src', `./images/human-question-mark.png`);
+	computerImageDisplay.setAttribute('src', `./images/computer-question-mark.png`);
+	humanScoreDisplay.textContent = humanScore;
+	computerScoreDisplay.textContent = computerScore;
 }
 
 
@@ -133,19 +159,12 @@ function updateChoicesUI(humanChoice, computerChoice) {
 }
 
 function updateScoresUI(humanScore, computerScore) {
-	const humanScoreDisplay = document.querySelector('#human_score');
-	const computerScoreDisplay = document.querySelector('#computer_score');
-
 	humanScoreDisplay.textContent = humanScore
 	computerScoreDisplay.textContent = computerScore;
 }
 
 
 function updateImagesUI(humanChoice, computerChoice) {
-	const humanImageDisplay = document.querySelector('#human_img');
-	const computerImageDisplay = document.querySelector('#computer_img');
-
-
 	humanImageDisplay.setAttribute('src', `./images/human-${humanChoice}.png`);
 	computerImageDisplay.setAttribute('src', `./images/computer-${computerChoice}.png`);
 }
