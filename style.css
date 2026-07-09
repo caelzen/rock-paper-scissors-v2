@@ -11,6 +11,7 @@ body {
 
 h1 {text-align: center;}
 
+
 #main_con {
 	background-color: #fff;
 	width: 100%;
@@ -88,7 +89,9 @@ h1 {text-align: center;}
 
 #choices {display: flex; justify-content: center; margin: 0 auto; width: 100%; max-width: 300px; margin-top: 25px; }
 
-#choices button {width: 100%; max-width: 70px; text-align: center; display: flex; flex-direction: column; text-align: center; justify-content: center; align-items: center;}
+#choices button {width: 100%; max-width: 90px; text-align: center; display: flex; flex-direction: column; text-align: center; justify-content: center; align-items: center; text-transform: uppercase; padding: 10px;}
+
+#choices button span {margin-top: 10px; display: block;}
 
 #choices button img {width: 100%; max-width: 150px; margin: 0 auto;}
 

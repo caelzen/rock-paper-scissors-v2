@@ -23,6 +23,8 @@ const finalWinnerDisplay = document.querySelector('#final_winner_box');
 const winMsgDisplay = document.querySelector('#win_msg');
 const loseMsgDisplay = document.querySelector('#lose_msg');
 const mainBoxDisplay = document.querySelector('#main_box');
+const humanScoreFinalDisplay = document.querySelector('#human_score_final');
+const computerScoreFinalDisplay = document.querySelector('#computer_score_final');
 
 
 
@@ -151,6 +153,8 @@ function displayFinalWinner() {
 
 	finalWinnerDisplay.classList.remove('d_none');
 	mainBoxDisplay.classList.add('d_none');
+	humanScoreFinalDisplay.textContent = humanScore;
+	computerScoreFinalDisplay.textContent = computerScore;
 
 	if(isHumanFinalWinner === true) {
 		winMsgDisplay.classList.remove('d_none');
