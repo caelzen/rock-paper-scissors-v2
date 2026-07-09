@@ -19,6 +19,11 @@ const roundCounterDisplay = document.querySelector('#round_number');
 const resultTextDisplay = document.querySelector('#result_description');
 const choicesDisplay = document.querySelector('#choices');
 const playAgainDisplay = document.querySelector('#play');
+const finalWinnerDisplay = document.querySelector('#final_winner_box');
+const winMsgDisplay = document.querySelector('#win_msg');
+const loseMsgDisplay = document.querySelector('#lose_msg');
+const mainBoxDisplay = document.querySelector('#main_box')
+
 
 
 // get computer and human choice
@@ -46,6 +51,7 @@ function playRound(humanChoice, computerChoice) {
 	updateWinnerTextUI(humanWin, computerWin);
 	removePopEffect();
 	checkTotalScore();
+	displayFinalWinner();
 
 	if (isGameOver) {
 		showPlayAgainUI();
@@ -111,8 +117,10 @@ function randomizer() {
 function checkTotalScore() {
 	if (humanScore === 2 || computerScore === 2) {
 		if(humanScore === 2) {
+			isHumanFinalWinner = true;
 			console.log("you won");
 		} else {
+			isHumanFinalWinner = false;
 			console.log("COMPUTER WON");
 		}
 		isGameOver = true;
@@ -135,7 +143,18 @@ playAgainDisplay.addEventListener('click', event => {
 
 
 function displayFinalWinner() {
+	if(isHumanFinalWinner === undefined) { return; }
 
+	finalWinnerDisplay.classList.remove('d_none');
+	mainBoxDisplay.classList.add('d_none');
+	
+	if(isHumanFinalWinner === true) {
+		winMsgDisplay.classList.remove('d_none');
+	}
+
+	if(isHumanFinalWinner === false) {
+		loseMsgDisplay.classList.remove('d_none');
+	}
 }
 
 
