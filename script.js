@@ -23,8 +23,11 @@ const finalWinnerDisplay = document.querySelector('#final_winner_box');
 const winMsgDisplay = document.querySelector('#win_msg');
 const loseMsgDisplay = document.querySelector('#lose_msg');
 const mainBoxDisplay = document.querySelector('#main_box');
-const humanScoreFinalDisplay = document.querySelector('#human_score_final');
-const computerScoreFinalDisplay = document.querySelector('#computer_score_final');
+const humanScoreFinalDisplay = document.querySelectorAll('.human_score_final');
+const computerScoreFinalDisplay = document.querySelectorAll('.computer_score_final');
+
+
+console.log(humanScoreFinalDisplay);
 
 
 
@@ -126,8 +129,8 @@ function randomizer() {
 
 
 function checkTotalScore() {
-	if (humanScore === 2 || computerScore === 2) {
-		if(humanScore === 2) {
+	if (humanScore === 5 || computerScore === 5) {
+		if(humanScore === 5) {
 			isHumanFinalWinner = true;
 			console.log("you won");
 		} else {
@@ -153,8 +156,14 @@ function displayFinalWinner() {
 
 	finalWinnerDisplay.classList.remove('d_none');
 	mainBoxDisplay.classList.add('d_none');
-	humanScoreFinalDisplay.textContent = humanScore;
-	computerScoreFinalDisplay.textContent = computerScore;
+
+	humanScoreFinalDisplay.forEach(element => {
+		element.textContent = humanScore;
+	});
+
+	computerScoreFinalDisplay.forEach( element => {
+		element.textContent = computerScore;
+	});
 
 	if(isHumanFinalWinner === true) {
 		winMsgDisplay.classList.remove('d_none');
