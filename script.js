@@ -22,7 +22,7 @@ const playAgainDisplay = document.querySelector('#play');
 const finalWinnerDisplay = document.querySelector('#final_winner_box');
 const winMsgDisplay = document.querySelector('#win_msg');
 const loseMsgDisplay = document.querySelector('#lose_msg');
-const mainBoxDisplay = document.querySelector('#main_box')
+const mainBoxDisplay = document.querySelector('#main_box');
 
 
 
@@ -39,6 +39,15 @@ choicesContainer.addEventListener('click', event => {
 	computerChoice = getComputerChoice();
 
 	playRound(humanChoice, computerChoice);
+});
+
+
+playAgainDisplay.addEventListener('click', event => {
+	resetGame();
+	playAgainDisplay.classList.add('d_none');
+	choicesDisplay.classList.remove('d_none');
+	
+	console.log("playAgainDisplay Clicked");
 });
 
 
@@ -134,12 +143,7 @@ function showPlayAgainUI() {
 	choicesDisplay.classList.add('d_none');
 }
 
-playAgainDisplay.addEventListener('click', event => {
-	resetGame();
-	playAgainDisplay.classList.add('d_none');
-	choicesDisplay.classList.remove('d_none');
-	console.log("playAgainDisplay Clicked");
-});
+
 
 
 function displayFinalWinner() {
@@ -147,7 +151,7 @@ function displayFinalWinner() {
 
 	finalWinnerDisplay.classList.remove('d_none');
 	mainBoxDisplay.classList.add('d_none');
-	
+
 	if(isHumanFinalWinner === true) {
 		winMsgDisplay.classList.remove('d_none');
 	}
@@ -174,6 +178,12 @@ function resetGame() {
 	computerImageDisplay.setAttribute('src', `./images/computer-question-mark.png`);
 	humanScoreDisplay.textContent = humanScore;
 	computerScoreDisplay.textContent = computerScore;
+
+	mainBoxDisplay.classList.remove('d_none');
+	finalWinnerDisplay.classList.add('d_none');
+	winMsgDisplay.classList.add('d_none');
+	loseMsgDisplay.classList.add('d_none');
+	isHumanFinalWinner = undefined;
 }
 
 

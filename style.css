@@ -171,13 +171,13 @@ h1 {text-align: center;}
 .title-lose { color: #e74c3c; text-shadow: 0 4px 10px rgba(231, 76, 60, 0.2); }
 
 
-#final-status-text {
+/* #final-status-text {
     font-size: 2.8rem;
     font-weight: 800;
     letter-spacing: 2px;
     margin: 20px 0 5px 0;
     text-transform: uppercase;
-}
+} */
 
 #final-subtext {
     font-size: 1.1rem;
