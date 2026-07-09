@@ -5,13 +5,15 @@ let computerScore = 0;
 let humanWin = false;
 let computerWin = false;
 let roundCounter = 0;
+let isGameOver = false;
 
 // UI
 const humanChoiceDisplay = document.querySelector('#human');
 const computerChoiceDisplay = document.querySelector('#computer');
 const roundCounterDisplay = document.querySelector('#round_number');
 const resultTextDisplay = document.querySelector('#result_description');
-
+const choicesDisplay = document.querySelector('#choices');
+const playAgainDisplay = document.querySelector('#play');
 
 
 // get computer and human choice
@@ -27,8 +29,6 @@ choicesContainer.addEventListener('click', event => {
 	computerChoice = getComputerChoice();
 
 	playRound(humanChoice, computerChoice);
-	
-	
 });
 
 
@@ -40,6 +40,8 @@ function playRound(humanChoice, computerChoice) {
 	updateImagesUI(humanChoice, computerChoice);
 	updateWinnerTextUI(humanWin, computerWin);
 	removePopEffect();
+	checkTotalScore();
+	resetGame();
 }
 
 
@@ -84,7 +86,6 @@ function checkRoundWinner(humanChoice, computerChoice) {
 }
 
 
-
 function getComputerChoice() {
 	let choice =  randomizer();
 
@@ -96,6 +97,32 @@ function getComputerChoice() {
 
 function randomizer() {
 	return Math.floor(Math.random() * 3) + 1;
+}
+
+
+function checkTotalScore() {
+	if (humanScore === 2 || computerScore === 2) {
+		if(humanScore === 2) {
+			console.log("you won");
+		} else {
+			console.log("COMPUTER WON");
+		}
+		isGameOver = true;
+		console.log("GAME OVER");
+	}
+}
+
+function resetGame() {
+	if (isGameOver) {
+		roundCounter = 0;
+		humanScore = 0;
+		computerScore = 0;
+		humanWin = false;
+		computerWin = false;
+		isGameOver = false;
+		playAgainDisplay.classList.remove('d_none');
+		choicesDisplay.classList.add('d_none');
+	}
 }
 
 
