@@ -142,3 +142,45 @@ h1 {text-align: center;}
     font-weight: 700;
     font-size: 1.3rem;
 }
+
+
+
+/* WIN / LOSE RESULT */
+.game-over-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95); /* A crisp white mask matching your card */
+    border-radius: 20px; /* Match your card's roundness */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.game-over-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.title-win { color: #2ecc71; text-shadow: 0 4px 10px rgba(46, 204, 113, 0.2); }
+.title-lose { color: #e74c3c; text-shadow: 0 4px 10px rgba(231, 76, 60, 0.2); }
+
+
+#final-status-text {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 20px 0 5px 0;
+    text-transform: uppercase;
+}
+
+#final-subtext {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+}

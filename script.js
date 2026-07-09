@@ -6,6 +6,7 @@ let humanWin = false;
 let computerWin = false;
 let roundCounter = 0;
 let isGameOver = false;
+let isHumanFinalWinner = undefined;
 
 // UI
 const humanScoreDisplay = document.querySelector('#human_score');
@@ -47,7 +48,7 @@ function playRound(humanChoice, computerChoice) {
 	checkTotalScore();
 
 	if (isGameOver) {
-		addPlayAgainUI();
+		showPlayAgainUI();
 	}
 }
 
@@ -120,7 +121,7 @@ function checkTotalScore() {
 }
 
 
-function addPlayAgainUI() {
+function showPlayAgainUI() {
 	playAgainDisplay.classList.remove('d_none');
 	choicesDisplay.classList.add('d_none');
 }
@@ -131,6 +132,11 @@ playAgainDisplay.addEventListener('click', event => {
 	choicesDisplay.classList.remove('d_none');
 	console.log("playAgainDisplay Clicked");
 });
+
+
+function displayFinalWinner() {
+
+}
 
 
 function resetGame() {

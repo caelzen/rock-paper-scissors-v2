@@ -44,9 +44,20 @@
 			<button id="scissors"><img src="./images/human-scissors.png"><span>scissors</span></button>
 		</div>
 
-		<button id="play" class="d_none">Play Again?</button>
-		<!-- <p id="instruction" class="text_center red">Ready to play? Pick your weapon!</p> -->
+		
+	
+	<div class="game-over-overlay d_none">
+		<div id="win_msg" class="d_none">
+			<span class="game-over-title title-win">🎉 YOU WON!</span>
+			<p id="final_subtext">You defeated the machine 2 to 1!</p>
+		</div>
 
+		<div id="lose_msg" class="d_none">
+			<span class="game-over-title title-lose">💀 YOU LOSE!</span>
+		</div>
+		
+		<button id="play" class="">Play Again?</button>
+	</div>
 	</main>
 
 	<script src="./script.js"></script>
