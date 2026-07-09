@@ -4,10 +4,12 @@ let humanScore = 0;
 let computerScore = 0;
 let humanWin = false;
 let computerWin = false;
+let roundCounter = 0;
 
 // UI
 const humanChoiceDisplay = document.querySelector('#human');
 const computerChoiceDisplay = document.querySelector('#computer');
+const roundCounterDisplay = document.querySelector('#round_number');
 const resultTextDisplay = document.querySelector('#result_description');
 
 
@@ -26,10 +28,12 @@ choicesContainer.addEventListener('click', event => {
 
 	playRound(humanChoice, computerChoice);
 	
+	
 });
 
 
 function playRound(humanChoice, computerChoice) {
+	updateRoundCounterUI();
 	checkRoundWinner(humanChoice, computerChoice);
 	updateChoicesUI(humanChoice, computerChoice)
 	updateScoresUI(humanScore, computerScore);
@@ -121,8 +125,6 @@ function updateImagesUI(humanChoice, computerChoice) {
 
 
 function updateWinnerTextUI(humanWin, computerWin) {
-	
-
 	resultTextDisplay.classList.remove('pop-win', 'pop-lose', 'pop-tie');
 
 	if(humanWin === false && computerWin === false) {
@@ -141,6 +143,12 @@ function updateWinnerTextUI(humanWin, computerWin) {
 		resultTextDisplay.classList.add('pop-lose', 'pop-effect');
 	}
 
+}
+
+
+function updateRoundCounterUI() {
+	roundCounter++;
+	roundCounterDisplay.textContent = roundCounter;
 }
 
 
