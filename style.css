@@ -96,6 +96,72 @@ h1 {text-align: center;}
 #choices button img {width: 100%; max-width: 150px; margin: 0 auto;}
 
 
+
+
+/* WIN OR LOSE RESULT POP UP*/
+.game-over-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95); /* A crisp white mask matching your card */
+    border-radius: 20px; /* Match your card's roundness */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.game-over-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.title-win { color: #2ecc71; text-shadow: 0 4px 10px rgba(46, 204, 113, 0.2); }
+
+.title-lose { color: #e74c3c; text-shadow: 0 4px 10px rgba(231, 76, 60, 0.2); }
+
+
+#final_subtext {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+}
+
+
+/* The active state when a button is clicked */
+.pop-win {
+    color: #2ecc71; /* Vibrant Green */
+}
+
+.pop-lose {
+    color: #e74c3c; /* Sharp Red */
+}
+
+.pop-tie {
+    color: #f1c40f; /* Amber Yellow */
+}
+
+.pop-effect {
+	transform: scale(1.15);
+}
+
+.win {
+    color: #2D974B; /* Friendly green */
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.lose {
+    color: #E94B4B; /* Soft red */
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+
 /* Play Again? button */
 #play {
 	display: block;
@@ -130,68 +196,7 @@ h1 {text-align: center;}
 }
 
 
+
+/* presets */
 .d_none {display: none !important;}
 .text_center {text-align: center;}
-#instruction {color:#2F3E73;}
-
-.win {
-    color: #2D974B; /* Friendly green */
-    font-weight: 700;
-    font-size: 1.3rem;
-}
-
-.win_color {
-    color: #2D974B;
-}
-
-.lose_color {
-    color: #E94B4B;
-}
-
-.lose {
-    color: #E94B4B; /* Soft red */
-    font-weight: 700;
-    font-size: 1.3rem;
-}
-
-
-
-/* WIN / LOSE RESULT */
-.game-over-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.95); /* A crisp white mask matching your card */
-    border-radius: 20px; /* Match your card's roundness */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.game-over-title {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.title-win { color: #2ecc71; text-shadow: 0 4px 10px rgba(46, 204, 113, 0.2); }
-.title-lose { color: #e74c3c; text-shadow: 0 4px 10px rgba(231, 76, 60, 0.2); }
-
-
-/* #final-status-text {
-    font-size: 2.8rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin: 20px 0 5px 0;
-    text-transform: uppercase;
-} */
-
-#final-subtext {
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    margin-bottom: 25px;
-}
