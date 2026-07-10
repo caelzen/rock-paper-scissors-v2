@@ -186,6 +186,7 @@ function resetGame() {
 	// Reset UIs
 	roundCounterDisplay.textContent = roundCounter;
 	resultTextDisplay.textContent = 'Play the game!';
+	resultTextDisplay.classList.remove('pop-win', 'pop-lose');
 	humanChoiceDisplay.textContent = '?';
 	computerChoiceDisplay.textContent = '?';
 	humanImageDisplay.setAttribute('src', `./images/human-question-mark.png`);
