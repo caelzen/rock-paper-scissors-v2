@@ -43,7 +43,7 @@ choicesContainer.addEventListener('click', event => {
 	// get computer choice
 	computerChoice = getComputerChoice();
 
-	playRound(humanChoice, computerChoice);
+	playRound();
 });
 
 
@@ -56,10 +56,10 @@ playAgainDisplay.addEventListener('click', event => {
 });
 
 
-function playRound(humanChoice, computerChoice) {
+function playRound() {
 	updateRoundCounterUI();
-	checkRoundWinner(humanChoice, computerChoice);
-	updateChoicesUI(humanChoice, computerChoice)
+	checkRoundWinner();
+	updateChoicesUI()
 	updateScoresUI(humanScore, computerScore);
 	updateImagesUI(humanChoice, computerChoice);
 	updateWinnerTextUI(humanWin, computerWin);
@@ -73,7 +73,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
-function checkRoundWinner(humanChoice, computerChoice) {
+function checkRoundWinner() {
 	humanWin = false;
 	computerWin = false;
 
@@ -203,7 +203,7 @@ function resetGame() {
 
 
 // UI updates
-function updateChoicesUI(humanChoice, computerChoice) {
+function updateChoicesUI() {
 	humanChoiceDisplay.textContent = humanChoice;
 	computerChoiceDisplay.textContent = computerChoice;
 }
