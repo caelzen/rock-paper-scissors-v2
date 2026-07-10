@@ -62,7 +62,7 @@ function playRound() {
 	updateChoicesUI()
 	updateScoresUI();
 	updateImagesUI();
-	updateWinnerTextUI(humanWin, computerWin);
+	updateWinnerTextUI();
 	removePopEffect();
 	checkTotalScore();
 	displayFinalWinner();
@@ -220,7 +220,7 @@ function updateImagesUI() {
 }
 
 
-function updateWinnerTextUI(humanWin, computerWin) {
+function updateWinnerTextUI() {
 	resultTextDisplay.classList.remove('pop-win', 'pop-lose', 'pop-tie');
 
 	if(humanWin === false && computerWin === false) {
