@@ -60,7 +60,7 @@ function playRound() {
 	updateRoundCounterUI();
 	checkRoundWinner();
 	updateChoicesUI()
-	updateScoresUI(humanScore, computerScore);
+	updateScoresUI();
 	updateImagesUI(humanChoice, computerChoice);
 	updateWinnerTextUI(humanWin, computerWin);
 	removePopEffect();
@@ -208,7 +208,7 @@ function updateChoicesUI() {
 	computerChoiceDisplay.textContent = computerChoice;
 }
 
-function updateScoresUI(humanScore, computerScore) {
+function updateScoresUI() {
 	humanScoreDisplay.textContent = humanScore
 	computerScoreDisplay.textContent = computerScore;
 }
