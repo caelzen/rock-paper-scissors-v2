@@ -61,7 +61,7 @@ function playRound() {
 	checkRoundWinner();
 	updateChoicesUI()
 	updateScoresUI();
-	updateImagesUI(humanChoice, computerChoice);
+	updateImagesUI();
 	updateWinnerTextUI(humanWin, computerWin);
 	removePopEffect();
 	checkTotalScore();
@@ -214,7 +214,7 @@ function updateScoresUI() {
 }
 
 
-function updateImagesUI(humanChoice, computerChoice) {
+function updateImagesUI() {
 	humanImageDisplay.setAttribute('src', `./images/human-${humanChoice}.png`);
 	computerImageDisplay.setAttribute('src', `./images/computer-${computerChoice}.png`);
 }
