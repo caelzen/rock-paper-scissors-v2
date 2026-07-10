@@ -27,30 +27,6 @@ const humanScoreFinalDisplay = document.querySelectorAll('.human_score_final');
 const computerScoreFinalDisplay = document.querySelectorAll('.computer_score_final');
 
 
-// get computer and human choice
-const choicesContainer = document.querySelector('#choices');
-choicesContainer.addEventListener('click', event => {
-	let clickedButton = event.target.closest('button');
-	if (!clickedButton) { return; }
-
-	// get human choice
-	humanChoice = clickedButton.id;
-
-	// get computer choice
-	computerChoice = getComputerChoice();
-
-	playRound();
-});
-
-
-playAgainDisplay.addEventListener('click', event => {
-	resetGame();
-	playAgainDisplay.classList.add('d_none');
-	choicesDisplay.classList.remove('d_none');
-	console.log("playAgainDisplay clicked");
-});
-
-
 function playRound() {
 	updateRoundCounterUI();
 	checkRoundWinner();
@@ -247,3 +223,27 @@ function removePopEffect() {
 		resultTextDisplay.classList.remove('pop-effect');
 	}, 300);
 }
+
+
+
+// elements with event listeners
+choicesDisplay.addEventListener('click', event => {
+	let clickedButton = event.target.closest('button');
+	if (!clickedButton) { return; }
+
+	// get human choice
+	humanChoice = clickedButton.id;
+
+	// get computer choice
+	computerChoice = getComputerChoice();
+
+	playRound();
+});
+
+
+playAgainDisplay.addEventListener('click', event => {
+	resetGame();
+	playAgainDisplay.classList.add('d_none');
+	choicesDisplay.classList.remove('d_none');
+	// console.log("playAgainDisplay clicked");
+});
