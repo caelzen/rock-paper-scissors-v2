@@ -27,10 +27,6 @@ const humanScoreFinalDisplay = document.querySelectorAll('.human_score_final');
 const computerScoreFinalDisplay = document.querySelectorAll('.computer_score_final');
 
 
-console.log(humanScoreFinalDisplay);
-
-
-
 // get computer and human choice
 const choicesContainer = document.querySelector('#choices');
 choicesContainer.addEventListener('click', event => {
@@ -51,8 +47,7 @@ playAgainDisplay.addEventListener('click', event => {
 	resetGame();
 	playAgainDisplay.classList.add('d_none');
 	choicesDisplay.classList.remove('d_none');
-	
-	console.log("playAgainDisplay Clicked");
+	console.log("playAgainDisplay clicked");
 });
 
 
@@ -132,13 +127,13 @@ function checkTotalScore() {
 	if (humanScore === 5 || computerScore === 5) {
 		if(humanScore === 5) {
 			isHumanFinalWinner = true;
-			console.log("you won");
+			// console.log("You Won");
 		} else {
 			isHumanFinalWinner = false;
-			console.log("COMPUTER WON");
+			// console.log("Computer Won");
 		}
 		isGameOver = true;
-		console.log("GAME OVER");
+		// console.log("GAME OVER");
 	}
 }
 
@@ -238,7 +233,6 @@ function updateWinnerTextUI() {
 		resultTextDisplay.textContent = '🤖 Computer scores!';
 		resultTextDisplay.classList.add('pop-lose', 'pop-effect');
 	}
-
 }
 
 
