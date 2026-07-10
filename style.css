@@ -139,6 +139,14 @@ h1 {text-align: center;}
     font-size: 1.3rem;
 }
 
+.win_color {
+    color: #2D974B;
+}
+
+.lose_color {
+    color: #E94B4B;
+}
+
 .lose {
     color: #E94B4B; /* Soft red */
     font-weight: 700;
